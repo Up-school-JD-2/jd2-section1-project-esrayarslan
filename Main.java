@@ -34,7 +34,6 @@ public class Main {
                     System.out.print("Silmek İstediğiniz Kullanıcı Id'si : ");
                     Long id = sc.nextLong();
                     usermanager.removeUserAccount(id);
-                    System.out.println(" -Hesabınız Silindi-");
                     System.out.println("--------------------------------");
                 }
                 case 3 -> { //Kullanıcı Hesabı Aramak İçin
@@ -58,7 +57,7 @@ public class Main {
                     String cast = sc.nextLine();
                     System.out.print("Yayın Tarihi : ");
                     String movieDate = sc.nextLine();
-                    System.out.print("Açıkllaması : ");
+                    System.out.print("Açıklaması : ");
                     String description = sc.nextLine();
                     System.out.print("Türü : ");
                     String type = sc.nextLine();
@@ -74,12 +73,17 @@ public class Main {
                     manager.removeMovie(id);
                     System.out.println("--------------------------------");
                 }
-                case 6 -> {
+                case 6 -> { // Film Aramak İçin
                     System.out.println("--------------------------------");
-                    System.out.println("Aramak İstediğiniz Filmin I'sini Giriniz : ");
+                    System.out.println("Aramak İstediğiniz Filmin Id'sini Giriniz : ");
                     sc.nextLine();
                     Long id = sc.nextLong();
                     manager.findMovie(id);
+                    System.out.println("--------------------------------");
+                }
+                case 7 -> { // Film Listelemek için
+                    System.out.println("--------------------------------");
+                    manager.listMovies();
                     System.out.println("--------------------------------");
                 }
 
@@ -99,6 +103,7 @@ public class Main {
         System.out.println("4: Film Eklemek İçin");
         System.out.println("5: Film Silmek İçin");
         System.out.println("6: Film Aramak İçin");
+        System.out.println("7: Filmleri Listelemek İçin");
         System.out.println("-1: Çıkış Yapmak İçin \n\n");
     }
 }
